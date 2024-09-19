@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <link rel="stylesheet" href="/new.css">
+  <style>
+
+    
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,  100..700;1,100..700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+  :root{
+  --pink:#e84393;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+
+}
+
+/* section of buy book */
+section{
+  padding: 2rem 9%;
+}
+.heading{
+  text-align: center;
+  font-size: 4rem;
+  color: #333;
+  padding: 1rem;
+  margin: 2rem 0;
+  background-color: pink;
+
+}
+.heading span{
+  color: var(--pink);
+  padding-left: 4px;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 4rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+
+}
+.btn:hover{
+  background-color: #e84393;
+}
+
+
+header{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  /* background-color: rgb(15, 78, 78); */
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  justify-content: space-between;
+  box-shadow: 0 .5rem 1rem rgb(0, 0, 0,0.1);
+}
+header .logo{
+  font-size: 3rem;
+  color: #333;
+  font-weight: bolder;
+}
+
+header .logo span{
+  color: var(--pink);
+}
+header .navbar a{
+  font-size: 2rem;
+  padding:0 1.5rem ;
+  color: #666;
+}
+header .navbar a:hover{
+  color: var(--pink);
+}
+header .icons a{
+  font-size:3rem;
+  color:#333 ;
+  margin-left:1.5rem ;
+  padding-top: 4px;
+}
+header .icons a:hover{
+  color: var(--pink);
+}
+
+header #toggler{
+  display:none ;
+}
+
+header .fa-bars{
+  font-size: 3rem;
+  color: #333;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  border: .1rem solid rgba(0,0,0,.2);
+  /* display: none; */
+}
+
+.home{
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('new2.jpeg') ;
+  background-image: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.home .content{
+  max-width: 50rem;
+}
+
+.home .content h3{
+  font-size: 6rem;
+  color: #76717e;
+  
+}
+.home .content span{
+  font-size: 3.5rem;
+  font-optical-sizing: 3rem;
+  padding: 1rem;
+  color: #5c6e19;
+  line-height: 1.5;
+}
+.home .content p{
+  font-size: 2.5rem;
+  font-optical-sizing: 3rem;
+  padding-top: 1rem;
+  color: #9ab6a9;
+  line-height: 1.5;
+}
+
+.icons-container{
+  background:#eee ;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  
+}
+.icons-container .icons{
+  background: #fff;
+  border: 1rem solid rgb(0, 0, 0,0.1);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: 1 1 25rem;
+}
+
+.icons-container .icons img{
+  height: 5rem;
+  margin-right: 2rem;
+}
+.icons-container .icons h3{
+  color: #2b6647;
+  padding-bottom: .5rem;
+  font-size: 1.5rem;
+}
+.icons-container .icons span{
+  color: #666;
+  font-size: 1.4rem;
+}
+.products .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer .box-container{
+  display: flex;
+  flex-wrap:wrap ;
+  gap: 1rem;
+}
+
+.footer .box-container .box{
+  flex: 1  1 25rem;
+
+}
+.footer .box-container .box h3{
+  color: #333;
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+
+display: block;  color: #666;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+.footer .box-container .box a:hover{
+  color: var(--pink);
+  text-decoration: underline;
+
+}
+.footer .credit{
+  text-align: center;
+  padding:1.5rem ;
+  margin-top: 1.5rem;
+  padding-top: 2.5rem;
+  font-size: 2rem;
+  color: #333;
+  border-top: .1rem solid rgba(0,0,0,.2);
+
+}
+.footer .credit span{
+  color: var(--pink);
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+  header{
+    padding:2rem;
+  }
+  section{
+    padding: 2rem;
+  }
+  .home{
+    background-position:left ;
+  }
+}
+@media(max-width:768px){
+  header .fa-bars{
+    display: block;
+  }
+  header .navbar{
+    position: absolute;
+    top: 100%;left: 0;right: 0;
+    background: #eee;
+    border-top: 1rem solid rgb(0, 0, 0,0.1);
+    clip-path: polygon(0 0,100% 0,100% 0,0 0);
+  }
+
+  header #toggler:checked ~.navbar{
+    clip-path:polygon(0 0,100% 0,100% 100%, 0% 100%) ;
+
+  }
+
+  header .navbar a{
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border:.1rem solid rgb(0, 0, 0,0.1) ;
+    display: block;
+    
+  }
+  .home .content h3{
+    font-size: 5rem; 
+  }
+  .home .content span{
+    font-size: 2.5rem; 
+  }
+  .icons-container .icons h3{
+    font-size: 2rem;
+  }
+  .icons-container .icons span{
+    font-size: 1.7rem;
+  }
+  
+}
+
+
+@media(max-width:450px){
+
+  html{
+    font-size: 50%;
+  }
+  .heading{
+    font-size:3rem ;
+  }
+
+}
+
+.form-sec{
+  background-image: url(/images/lib-bg3.jpg);
+
+}
+    .regform{
+      margin: 15rem;
+    
+      padding-top: 30px;
+      margin-left: 40%;
+      background-color: rgb(134, 179, 179);
+      display: inline-block;
+      height: 500px;
+      width: 400px;
+      border-radius: 20px;
+      opacity: 0.8;
+    }
+    form{
+      padding: 7px 40px;
+    }
+    form label{
+      font-size: 14px;
+      color: #0a050e;
+      font-weight: bolder;
+    }
+
+    form input{
+      margin-top: 1rem;
+      margin-left: 2rem;
+      padding-top: 2px;
+      height: 3rem;
+      font-size: 20px;
+      border-radius: 4px;
+    }
+    #but{
+      margin-top: 1rem;
+      margin-left: 40%;
+      border-radius: 4px;
+      font-size: 17px;
+      height: 4rem;
+      width: 8rem;
+     
+    }
+
+    form h3{
+      font-size: 18px;
+      color: #e84393;
+      padding-bottom: 1.6rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  
+  <input type="checkbox" name="" id="toggler">
+  <label for="toggler" class="fas fa-bars"></label>
+
+  <a href="#" class="logo">BOOK<span></span></a>
+
+  <nav class="navbar">
+    <a href="new.html">Home</a>
+    <a href="Cart.html">Cart</a>
+    <a href="catalog.html">Catalogue</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">register</a>
+  
+    <span class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-home"></a>
+      <a href="#" class="fas fa-shopping-cart"></a>
+    </span>
+  </nav>
+</header>
+
+
+  <main>
+    <SECTION class="form-sec">
+      <div class="regform">
+        <form action="form">
+          <h3 id="regh3">****<u>FIll THE DETAILS</u>****</h3>
+          <div class="formcont">
+            
+          <label for="" class="reg-lbl">Enter Your Name::</label><br>
+          <input type="text" id="put"><br>
+
+          <label for="" class="reg-lbl">Enter Your Roll NO::</label><br>
+          <input type="text" id="put"><br>
+
+          <label for="" class="reg-lbl">Enter your Phone No::</label><br>
+          <input type="number" id="put"><br>
+
+          <label for="" class="reg-lbl">Enter your email::</label><br>
+          <input type="email" id="put"><br>
+
+          <label for="" class="reg-lbl">Create Password::</label><br>
+          <input type="password" id="put"><br>
+
+          <label for="" class="reg-lbl">Type again Password::</label><br>
+          <input type="password" id="put"><br>
+          <button id="but"><a href="/login.html">Create</a></button>
+        </div>
+        </form>
+      </div>
+    </SECTION>
+  </main>
+
+  <section class="footer">
+
+    <div class="box-container">
+    <div class="box">
+      <h3>quick links </h3>
+        <a href="#">Home</a>
+        <a href="#">Cart</a>
+        <a href="#">Catalogue</a>
+        <a href="#">Login</a>
+        <a href="#">register</a>
+    </div>
+    <div class="box">
+      <h3>Social links </h3>
+        <a href="#">My account</a>
+        <a href="#">Order</a>
+        <a href="#">Favourite</a>
+    </div>
+
+    <div class="credit">Created by<span>Bimal Babu</span>|all right reserved</div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/57f3a2da0a.js" crossorigin="anonymous"></script>
+  </section>
+</body>
+</html>

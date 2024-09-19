@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Page </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+    :root{
+    --pink:#e84393;
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      outline: none; border: none;
+      text-decoration: none;
+      text-transform: capitalize;
+      transition: .2s linear;
+    }
+    
+    html{
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+      scroll-padding-top: 6rem;
+      overflow-x: hidden;
+    
+    }
+    
+    /* section of buy book */
+    section{
+      margin-top: 6rem;
+      padding: 2rem 9%;
+      border-radius: 4px;
+    }
+    .heading{
+      text-align: center;
+      font-size: 4rem;
+      color: #333;
+      padding: 1rem;
+      margin: 5rem 0;
+      background-color: pink;
+    
+    }
+    .heading span{
+      color: var(--pink);
+      padding-left: 4px;
+    }
+
+    
+    .btn{
+      display: inline-block;
+      margin-top: 1rem;
+      border-radius: 5rem;
+      background-color: #333;
+      color: #fff;
+      padding: 2rem 4rem;
+      cursor: pointer;
+      font-size: 1.7rem;
+    
+    }
+    .btn:hover{
+      background-color: #e84393;
+    }
+    
+    
+    header{
+      position: fixed;
+      top:0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      /* background-color: rgb(15, 78, 78); */
+      padding: 2rem 9%;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      justify-content: space-between;
+      box-shadow: 0 .5rem 1rem rgb(0, 0, 0,0.1);
+    }
+    header .logo{
+      font-size: 3rem;
+      color: #333;
+      font-weight: bolder;
+    }
+    
+    header .logo span{
+      color: var(--pink);
+    }
+    header .navbar a{
+      font-size: 2rem;
+      padding:0 1.5rem ;
+      color: #666;
+    }
+    header .navbar a:hover{
+      color: var(--pink);
+    }
+    header .icons a{
+      font-size:3rem;
+      color:#333 ;
+      margin-left:1.5rem ;
+      padding-top: 4px;
+    }
+    header .icons a:hover{
+      color: var(--pink);
+    }
+    
+    header #toggler{
+      display:none ;
+    }
+    
+    header .fa-bars{
+      font-size: 3rem;
+      color: #333;
+      border-radius: .5rem;
+      padding: .5rem 1.5rem;
+      cursor: pointer;
+      border: .1rem solid rgba(0,0,0,.2);
+      /* display: none; */
+    }
+      .products .box-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+       /* Icons container*/
+       .icons-container{
+        background:#eee ;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        
+      }
+      .icons-container .icons{
+        background: #fff;
+        border: 1rem solid rgb(0, 0, 0,0.1);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: 1 1 25rem;
+      }
+      
+      .icons-container .icons img{
+        height: 5rem;
+        margin-right: 2rem;
+      }
+      .icons-container .icons h3{
+        color: #2b6647;
+        padding-bottom: .5rem;
+        font-size: 1.5rem;
+      }
+      .icons-container .icons span{
+        color: #666;
+        font-size: 1.4rem;
+      }
+
+       /* Icons container*/
+
+
+      .products .box-container .box{
+        
+        flex: 1 1 10rem;
+        box-shadow: 0.5rem 1.5rem rgb(0, 0, 0,.1);
+        border-radius: 2rem;
+        border: 1rem solid rgb(0, 0, 0,.1);
+        position: relative;
+        
+      }
+      
+      .products .box-container .box .discount{
+        position: absolute;
+        top: o.4rem;left: 2fr;
+        padding: 1rem 0.4rem;
+        font-size: 2rem;
+        columns: var(--pink);
+        color: #130202;
+        background-color: #00a108;
+        z-index: 1;
+        border-radius: .5rem;
+      
+      }
+      .products .box-container .box .image{
+        margin-top: 4px;
+        position: relative;
+        text-align: center;
+        padding-top: 2rem;
+        overflow: hidden;
+        align-items: center;
+      }
+      .products .box-container .box .image img{
+        height: 25rem;
+      }
+      .products .box-container .box:hover .image{
+        transform: scale(1.1);
+      }
+      .products .box-container .box .image .icons{
+        position: absolute; 
+        bottom:-7rem;left: 0;right: o;
+        display: flex;
+      }
+      
+      .products .box-container .box:hover .image .icons{
+        position:absolute ;
+        bottom: 0;
+      }
+      
+      
+      .products .box-container .box .image a{
+        height: 4rem;
+        line-height: 5rem;
+        font-size: 2rem;
+        width: 50%;
+        background-color: var(--pink);
+        color: #fff;
+      }
+      .products .box-container .box .image  .icons .car-btn{
+        border-left: .1rem #fff7;
+        border-right: .1rem #fff7;
+        width: 100%;
+      }
+      .products .box-container .box .image  .icons a:hover{
+        background: #3a3434;
+      }
+      
+      .products .box-container .box .content{
+        padding: 2rem;
+        text-align: center;
+      }
+      .products .box-container .box .content h3{
+        font-size: 2.5rem;
+        color: #333;
+      }
+      .products .box-container .box .content .pice{
+        font-size:2.2rem;
+        color:var(--pink);
+        font-weight: bolder;
+        padding-top: 1rem;
+      }
+      
+      .footer .box-container{
+        display: flex;
+        flex-wrap:wrap ;
+        gap: 1rem;
+      }
+      
+      .footer .box-container .box{
+        flex: 1  1 25rem;
+      
+      }
+      .footer .box-container .box h3{
+        color: #333;
+        font-size: 2.5rem;
+        padding: 1rem 0;
+      }
+      
+      .footer .box-container .box a{
+      
+      display: block;  color: #666;
+        font-size: 1.5rem;
+        padding: 1rem 0;
+      }
+      .footer .box-container .box a:hover{
+        color: var(--pink);
+        text-decoration: underline;
+      
+      }
+      .footer .credit{
+        text-align: center;
+        padding:1.5rem ;
+        margin-top: 1.5rem;
+        padding-top: 2.5rem;
+        font-size: 2rem;
+        color: #333;
+        border-top: .1rem solid rgba(0,0,0,.2);
+      
+      }
+      .footer .credit span{
+        color: var(--pink);
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      @media(max-width:991px){
+      
+        html{
+          font-size: 55%;
+        }
+        header{
+          padding:2rem;
+        }
+        section{
+          padding: 2rem;
+        }
+        .home{
+          background-position:left ;
+        }
+      }
+      @media(max-width:768px){
+        header .fa-bars{
+          display: block;
+        }
+        header .navbar{
+          position: absolute;
+          top: 100%;left: 0;right: 0;
+          background: #eee;
+          border-top: 1rem solid rgb(0, 0, 0,0.1);
+          clip-path: polygon(0 0,100% 0,100% 0,0 0);
+        }
+      
+        header #toggler:checked ~.navbar{
+          clip-path:polygon(0 0,100% 0,100% 100%, 0% 100%) ;
+      
+        }
+      
+        header .navbar a{
+          margin: 1.5rem;
+          padding: 1.5rem;
+          background: #fff;
+          border:.1rem solid rgb(0, 0, 0,0.1) ;
+          display: block;
+          
+        }
+        .home .content h3{
+          font-size: 5rem; 
+        }
+        .home .content span{
+          font-size: 2.5rem; 
+        }
+        .icons-container .icons h3{
+          font-size: 2rem;
+        }
+        .icons-container .icons span{
+          font-size: 1.7rem;
+        }
+        
+      }
+      
+      
+      @media(max-width:450px){
+      
+        html{
+          font-size: 50%;
+        }
+        .heading{
+          font-size:3rem ;
+        }
+      
+      }
+
+  </style>
+</head>
+<body>
+  <header>
+    
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">BOOK<span></span></a>
+
+    <nav class="navbar">
+      <a href="new.html">Home</a>
+      <a href="  ">Cart</a>
+      <a href="Cart.html">Catalogue</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">register</a>
+      
+      <span class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-home"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+      </span>
+    </nav>
+  </header>
+
+  <!-- Product Section start-->
+  <section class="products" id="products">
+    <h1 class="heading">Latest<span>BOOKS</span></h1>
+    <div class="box-container">
+    <div class="box">
+      <span class="discount">-10%</span>
+        <div class="image">
+          <img src="images/geeta.jpeg" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">Add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>Bhagavad Geeta</h3>
+          <div class="pice">₹:250 <span> ₹:325</span></div>
+        </div>
+    </div>
+    <!-- 2 -->
+    <div class="box">
+      <span class="discount">-15%</span>
+        <div class="image">
+          <img src="images/bachan madhusal.webp" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>Bachchan Madhusala</h3>
+          <div class="pice">₹:550 <span> ₹:685</span></div>
+        </div>
+    </div>
+    <!-- 3 -->
+    <div class="box">
+      <span class="discount">-12%</span>
+        <div class="image">
+          <img src="images/anime cover.jpeg" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>Anime</h3>
+          <div class="pice">₹:255 <span> ₹:280</span></div>
+        </div>
+    </div>
+    <!-- 4 -->
+    <div class="box">
+      <span class="discount">-20%</span>
+        <div class="image">
+          <img src="images/geeta.jpeg" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>Geetanjali</h3>
+          <div class="pice">₹:1250 <span> ₹:1425</span></div>
+        </div>
+    </div>
+    <!-- 5 -->
+    <div class="box">
+      <span class="discount">-40%</span>
+        <div class="image">
+          <img src="images/love in the city.jpeg" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>love in the city</h3>
+          <div class="pice">₹:250 <span> ₹:285</span></div>
+        </div>
+    </div>
+    <!-- 6 -->
+    <div class="box">
+      <span class="discount">-10%</span>
+        <div class="image">
+          <img src="images/marktwin.jpg" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>INDIA</h3>
+          <div class="pice">₹:250 <span> ₹:265</span></div>
+        </div>
+    </div>
+    <!-- 7 -->
+    <div class="box">
+      <span class="discount">-10%</span>
+        <div class="image">
+          <img src="images/midnight.jpeg" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>Midnight Children</h3>
+          <div class="pice">₹:260 <span> ₹:295</span></div>
+        </div>
+    </div>
+    <!-- 8 -->
+
+    <div class="box">
+      <span class="discount">-10%</span>
+        <div class="image">
+          <img src="images/swamy.jpg" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>Swami Vivekanand</h3>
+          <div class="pice">₹:2750 <span> ₹:2450</span></div>
+        </div>
+    </div>
+    <!-- 9 -->
+    <div class="box">
+      <span class="discount">-10%</span>
+        <div class="image">
+          <img src="images/the inheritance.jpeg" alt="">
+            <div class="icons">
+              <a href="" class="fas fa-heart"></a>
+              <a href="" class="car-btn">add to cart</a>
+              <a href="" class="fas fa-share"></a>
+            </div>
+        </div>
+        <div class="content">
+          <h3>The inherittance of Loss</h3>
+          <div class="pice">₹:250 <span> ₹:225</span></div>
+        </div>
+    </div>
+  </div>
+
+   </section>
+
+   <section class="footer">
+
+    <div class="box-container">
+    <div class="box">
+      <h3>quick links </h3>
+        <a href="#">Home</a>
+        <a href="#">Cart</a>
+        <a href="#">Catalogue</a>
+        <a href="#">Login</a>
+        <a href="#">register</a>
+    </div>
+    <div class="box">
+      <h3>Social links </h3>
+        <a href="#">My account</a>
+        <a href="#">Order</a>
+        <a href="#">Favourite</a>
+    </div>
+
+    <div class="credit">Created by<span>Bimal Babu</span>|all right reserved</div>
+  </div>
+
+
+  </section>
+
+
+  <script src="https://kit.fontawesome.com/57f3a2da0a.js" crossorigin="anonymous"></script>
+</body>
+</html>
